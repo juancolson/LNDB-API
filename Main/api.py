@@ -31,6 +31,11 @@ async def light_novel_search(Search):
 async def light_novel_detail(Detail):
     """
         This is a bit confusing. You take the lndb-link, remove http://lndb.info/light_novel/ part and enter the remaining part.
+        For example,
+        To get detail of Kumo Desu ga, Nani ka? Light Novel,
+        You take the lndb-link : http://lndb.info/light_novel/Kumo_Desu_ga,_Nani_ka
+        remove  http://lndb.info/light_novel/
+        and enter Kumo_Desu_ga,_Nani_ka in "Detail".
     """
     if Detail is not None:
         result = get_detail(Detail)
