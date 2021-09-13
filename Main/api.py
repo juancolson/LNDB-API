@@ -28,7 +28,7 @@ async def light_novel_search(Search):
         return result_list
     
 @application.get("/detail/{Detail}")
-async def light_novel_search(Detail):
+async def light_novel_detail(Detail):
     if Detail is not None:
         result = get_detail(Detail)
         return result
