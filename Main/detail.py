@@ -5,7 +5,7 @@ from Main.light_model import LightNovelInfo
 
 def create_light_novel_info(match, scrape_instance):
     content_url = match.get("href")
-    view_url = "http://lndb.info/light_novel/view/{}".format(content_url.split("/")[-1])
+    view_url = "http://lndb.info/light_novel/view/{}".format(content_url.split("%2F")[-1])
     fetch_message = "Fetch information from: {}".format(view_url)
     logging.info(fetch_message)
     light_novel_page = scrape_instance.get(view_url, headers={
