@@ -68,5 +68,5 @@ def create_light_novel_info(match, scrape_instance):
 
 def get_detail(url):
     scrape = cfscrape.create_scraper()
-    match = {"href": "/"+url}
+    match = {"href": "http://lndb.info/light_novel/"+url}
     return create_light_novel_info(match, scrape)
