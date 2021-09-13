@@ -29,6 +29,9 @@ async def light_novel_search(Search):
     
 @application.get("/detail/{Detail}")
 async def light_novel_detail(Detail):
+    """
+        This is a bit confusing. You take the lndb-link, remove http://lndb.info/light_novel/ part and enter the remaining part.
+    """
     if Detail is not None:
         result = get_detail(Detail)
         return result
