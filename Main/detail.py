@@ -17,7 +17,7 @@ def create_light_novel_info(match, scrape_instance):
     })
     light_novel_page_soup = bs4.BeautifulSoup(light_novel_page.content, "html.parser")
 
-    light_novel_title = content_url.split("/")[-1].replace("_", " ")
+    light_novel_title = light_novel_page_soup.find("div", {"class": "secondarytitle"}).text.strip()
     information_message = "Fetch information from light novel: {}".format(light_novel_title)
     logging.info(information_message)
     light_novel_info = LightNovelInfo(title=light_novel_title, lndb_link=content_url)
