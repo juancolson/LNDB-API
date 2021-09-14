@@ -20,7 +20,7 @@ def find_light_novel(title):
         for individual in light_novels:
             item = {
                 'title': individual.text.strip(),
-                'lndb': individual['href'],
+                'lndb_stored_as': individual['href'].replace("http://lndb.info/light_novel/",""),
             }
             search_result.append(item)
     else:
