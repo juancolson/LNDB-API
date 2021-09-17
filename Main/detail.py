@@ -57,11 +57,14 @@ def create_light_novel_info(match, scrape_instance):
     light_novel_info.alternative = [e.lstrip() for e in d]
 
     cover_section = light_novel_page_soup.find("div", {"class": "lightnovelcovers"})
-    cover_element_list = cover_section.findAll("a", {"class": "highslide"}) if cover_section is not None else []
-    covers = []
-    for ( index = 0 ; index < cover_element_list.length ;index++):
-        element = cover_element_list[index]
-        covers = push(element['href'])
+    if cover_section is not None:
+        cover_element_list = cover_section.findAll("a", {"class": "highslide"})
+        covers = []
+        for indv in cover_element_list:
+            link = "http://lndb.info/{}".format(indv['href'])
+            covers.append(link)
+    else: covers = [] 
+    
     light_novel_info.covers = covers
 
     return light_novel_info
