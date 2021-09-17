@@ -25,4 +25,4 @@ class LightNovelInfoModel(BaseModel):
     volumes: str
     alternative: List[str]
     lndb_link: str
-    covers: List[list]
+    covers: List[str]
